@@ -11,10 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# IMPORTANT → frontend folder path
 FRONTEND_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "frontend"))
-
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
 DB_PATH = os.path.join(BASE_DIR, "database.db")
 
@@ -55,17 +52,14 @@ def init_db():
 
 init_db()
 
-# Register APIs
 app.register_blueprint(post_bp)
 app.register_blueprint(comment_bp)
 app.register_blueprint(album_bp)
 
 
-# redirect to /posts
 @app.route("/")
 def home():
     return redirect("/posts")
-
 
 
 @app.route("/posts")
@@ -73,7 +67,6 @@ def posts_page():
     return send_from_directory(FRONTEND_DIR, "index.html")
 
 
-# Serve static files
 @app.route("/style.css")
 def css():
     return send_from_directory(FRONTEND_DIR, "style.css")
@@ -84,11 +77,10 @@ def js():
     return send_from_directory(FRONTEND_DIR, "main.js")
 
 
-# Serve uploaded images
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
 
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True,host='0.0.0.0')
+    app.run(port=5000, debug=True)
