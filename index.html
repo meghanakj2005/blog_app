@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">📝 Blog Dashboard</div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2 id="sidebarTitle">Posts</h2>
+            <div id="listContainer"></div>
+        </div>
+
+        <div class="content">
+            <div class="top-actions">
+                <button class="nav-btn active" onclick="showSection('posts', this)">View Posts</button>
+                <button class="nav-btn" onclick="showSection('create', this)">Create Post</button>
+            </div>
+
+            <h2 id="contentTitle">Post Details</h2>
+
+            <div id="details">
+                <p class="placeholder">Select a post card from the left to view details and comments.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

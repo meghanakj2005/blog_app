@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #13233f, #08162b);
+    color: white;
+}
+
+.navbar {
+    background: #06142d;
+    padding: 18px 28px;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+.sidebar {
+    width: 360px;
+    background: rgba(255, 255, 255, 0.04);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px 14px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.content {
+    flex: 1;
+    padding: 22px;
+    overflow-y: auto;
+}
+
+.top-actions {
+    margin-bottom: 18px;
+}
+
+.nav-btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #111;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-btn.active {
+    background: #4da3ff;
+    color: white;
+}
+
+#contentTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.placeholder {
+    color: #dbe6ff;
+    font-size: 18px;
+}
+
+/* Sidebar Post Cards */
+.list-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.list-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.sidebar-card-body {
+    padding: 14px;
+}
+
+.sidebar-card-body h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.sidebar-card-meta {
+    font-size: 14px;
+    color: #d5e3ff;
+    margin-bottom: 6px;
+}
+
+.sidebar-card-text {
+    font-size: 14px;
+    color: #e9f1ff;
+    opacity: 0.9;
+    line-height: 1.45;
+}
+
+/* Right-side detail card */
+.detail-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.detail-card h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.detail-meta {
+    margin-bottom: 6px;
+    color: #e0ebff;
+    font-size: 18px;
+}
+
+.post-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 18px 0;
+    display: block;
+}
+
+.post-body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #edf3ff;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: 26px;
+    margin: 18px 0 12px;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #4da3ff;
+    color: white;
+    font-size: 15px;
+}
+
+.btn-danger {
+    background: #ff5d5d;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 18px 0;
+}
+
+/* Comments */
+.comment-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.comment-card p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.comment-card strong {
+    color: #ffffff;
+}
+
+/* Form */
+.form-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    padding: 18px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.loading {
+    color: #dbe6ff;
+    font-size: 16px;
+}
