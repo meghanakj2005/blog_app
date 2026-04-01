@@ -7,13 +7,13 @@ from post import post_bp
 from comment import comment_bp
 from album import album_bp
 
-app = Flask(__name__)
-CORS(app)
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FRONTEND_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "frontend"))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
 DB_PATH = os.path.join(BASE_DIR, "database.db")
+
+app = Flask(__name__, static_folder=STATIC_DIR, static_url_path="")
+CORS(app)
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["DB_PATH"] = DB_PATH
@@ -64,17 +64,17 @@ def home():
 
 @app.route("/posts")
 def posts_page():
-    return send_from_directory(FRONTEND_DIR, "index.html")
+    return send_from_directory(app.static_folder, "index.html")
 
 
 @app.route("/style.css")
 def css():
-    return send_from_directory(FRONTEND_DIR, "style.css")
+    return send_from_directory(app.static_folder, "style.css")
 
 
 @app.route("/main.js")
 def js():
-    return send_from_directory(FRONTEND_DIR, "main.js")
+    return send_from_directory(app.static_folder, "main.js")
 
 
 @app.route("/uploads/<filename>")
@@ -83,4 +83,4 @@ def uploaded_file(filename):
 
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True,host='0.0.0.0')
+    app.run(host="0.0.0.0", port=5000, debug=True)
